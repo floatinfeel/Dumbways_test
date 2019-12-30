@@ -2,15 +2,17 @@ create database count;
 use count;
 
 create table tb_caleg (
-id int (11) PRIMARY KEY not null auto_increment,
+id int (11) PRIMARY KEY auto_increment,
 name varchar (35),
 id_partai int (11),
 earn_vote int (4) );
 
 create table tb_partai (
-id_partai int (11) PRIMARY KEY not null auto_increment,
+id_partai int (11) PRIMARY KEY auto_increment,7
 name varchar (35) );
 
+alter table tb_caleg
+add constraint fkid_partai foreign key (id_partai) references tb_partai (id_partai);
 
 INSERT INTO tb_partai(name) VALUES 
 ('Cilacap Santai'),
